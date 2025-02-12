@@ -110,6 +110,19 @@ h5 {
     padding-bottom: 56.25%;
 }
 
+@media all {
+    /* sets the base font size for all user agents that support media queries */
+    html {
+        font-size: 12px;
+    }
+}
+@media screen and (min-width: 480px) {
+    /* sets a larger base font size for viewports with a minimum with of 480px, e.g. tablets, desktops, jumbotrons, etc. */
+    html {
+        font-size: 16px;
+    }
+}
+
 .video {
     position: absolute;
     top: 0;

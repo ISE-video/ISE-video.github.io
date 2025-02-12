@@ -186,13 +186,20 @@ h5 {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    gap: 0;
+    padding:0px;
 }
 
 .column {
     display: flex;
-    flex-direction;
+    flex-direction: column;
     align-items: center;
     gap: 20px;
+    padding:0px;
+}
+
+.col {
+    padding:1%;
 }
 
 .failed {

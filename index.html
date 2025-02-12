@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Implicit State Estimation via Video Replanning">
+
+    <title>Implicit State Estimation via Video Replanning</title>
+    <!-- Bootstrap core CSS -->
+    <!--link href="bootstrap.min.css" rel="stylesheet"-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet " type="text/css " href="slick/slick.css" />
+    <link rel="stylesheet " type="text/css " href="slick/slick-theme.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="offcanvas.css" rel="stylesheet">
+    <!--    <link rel="icon" href="img/favicon.gif" type="image/gif">-->
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container"></div>
+        <h1>Implicit State Estimation<br> via Video Replanning</h1>
+        <div class="authors">
+            <div>anonymous authors</div>
+        </div>
+    </div>
+
+    <div class="btn-container">
+        <a href="https://github.com/ISE-video/ise"><span class="button-34"><i class="fa fa-file-code-o"></i> Code</span></a>
+    </div>
+
+    <div class="container ">
+        <div class="section" id="qual">
+            <h2>Qualitative Results</h2>
+            <hr>
+            To illustrate how our system adapts to test-time information, we present intermediate outputs of the framework, including the failed plan and interaction, the newly generated plans, the selected plan, and the final execution that improves task completion. Our system operates in three stages:
+            <li>
+                (a) It takes in the failed interaction, updates the state embedding, and generates future plans accordingly.
+            </li>  
+            <li>
+                (b) It then selects the plan that deviates the most from the previously failed attempt.
+            </li>
+            <li>
+                (c) Finally, it executes the selected plan to successfully accomplish the task.
+            </li>
+
+            <p><br /></p>
+            
+            <h4>Task: Push Bar</h4>
+            <div class="row">
+                <div class="col justify-content-center text-center">
+                    <figure>
+                        <img src="img/qual_results/push_bar/0/best_plan.gif" width="100%" >
+                        <figcaption>Failed Plan</figcaption>
+                    </figure>
+                </div>
+                <div class="col justify-content-center text-center">
+                    <figure>
+                        <img src="img/qual_results/push_bar/0/interaction.gif" width="100%">
+                        <figcaption>Failed Interaction</figcaption>
+                    </figure>
+                    
+                </div>
+                <div class="col justify-content-center text-center">
+                    <figure>
+                        <img src="img/qual_results/push_bar/1/plans/0.gif" width="100%" style="margin:5px 0px;">  
+                        <img src="img/qual_results/push_bar/1/plans/1.gif" width="100%" style="margin:5px 0px;">
+                        <figcaption>New Plans</figcaption>
+                    </figure>
+                </div>  
+                <div class="col justify-content-center text-center">
+                    <figure>
+                        <img src="img/qual_results/push_bar/1/best_plan.gif" width="100%" >
+                        <figcaption>Selected Plan</figcaption>
+                    </figure>   
+                </div>
+                <div class="col justify-content-center text-center">
+                    <figure>
+                        <img src="img/qual_results/push_bar/1/interaction.gif" width="100%" >
+                        <figcaption>Execution</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <p><br /></p>
+
+            <h4>Task: Pick Bar</h4>
+            <div class="row">
+                <div class="col justify-content-center text-center">
+                    <figure>
+                        <img src="img/qual_results/pick_bar/0/best_plan.gif" width="100%" >
+                        <figcaption>Failed Plan</figcaption>
+                    </figure>
+                </div>
+                <div class="col justify-content-center text-center">
+                    <figure>
+                        <img src="img/qual_results/pick_bar/0/interaction.gif" width="100%">
+                        <figcaption>Failed Interaction</figcaption>
+                    </figure>
+                    
+                </div>
+                <div class="col justify-content-center text-center">
+                    <figure>
+                        <img src="img/qual_results/pick_bar/1/plans/0.gif" width="100%" style="margin:5px 0px;">  
+                        <img src="img/qual_results/pick_bar/1/plans/1.gif" width="100%" style="margin:5px 0px;">
+                        <figcaption>New Plans</figcaption>
+                    </figure>
+                </div>  
+                <div class="col justify-content-center text-center">
+                    <figure>
+                        <img src="img/qual_results/pick_bar/1/best_plan.gif" width="100%" >
+                        <figcaption>Selected Plan</figcaption>
+                    </figure>   
+                </div>
+                <div class="col justify-content-center text-center">
+                    <figure>
+                        <img src="img/qual_results/pick_bar/1/interaction.gif" width="100%" >
+                        <figcaption>Execution</figcaption>
+                    </figure>
+                </div>
+            </div>
+            <p><br /></p>
+
+            <h4>Task: Turn Faucet</h4>
+            <div class="row">
+                <div class="col justify-content-center text-center">
+                    <figure>
+                        <img src="img/qual_results/turn_faucet/0/best_plan.gif" width="100%" >
+                        <figcaption>Failed Plan</figcaption>
+                    </figure>
+                </div>
+                <div class="col justify-content-center text-center">
+                    <figure>
+                        <img src="img/qual_results/turn_faucet/0/interaction.gif" width="100%">
+                        <figcaption>Failed Interaction</figcaption>
+                    </figure>
+                    
+                </div>
+                <div class="col justify-content-center text-center">
+                    <figure>
+                        <img src="img/qual_results/turn_faucet/1/plans/0.gif" width="100%" style="margin:5px 0px;">  
+                        <img src="img/qual_results/turn_faucet/1/plans/1.gif" width="100%" style="margin:5px 0px;">
+                        <figcaption>New Plans</figcaption>
+                    </figure>
+                </div>  
+                <div class="col justify-content-center text-center">
+                    <figure>
+                        <img src="img/qual_results/turn_faucet/1/best_plan.gif" width="100%" >
+                        <figcaption>Selected Plan</figcaption>
+                    </figure>   
+                </div>
+                <div class="col justify-content-center text-center">
+                    <figure>
+                        <img src="img/qual_results/turn_faucet/1/interaction.gif" width="100%" >
+                        <figcaption>Execution</figcaption>
+                    </figure>
+                </div>
+            </div>
+            <p><br /></p>
+
+
+            <h4>Task: Open Box</h4>
+            <div class="row">
+                <div class="col justify-content-center text-center">
+                    <figure>
+                        <img src="img/qual_results/open_box/0/best_plan.gif" width="100%" >
+                        <figcaption>Failed Plan</figcaption>
+                    </figure>
+                </div>
+                <div class="col justify-content-center text-center">
+                    <figure>
+                        <img src="img/qual_results/open_box/0/interaction.gif" width="100%">
+                        <figcaption>Failed Interaction</figcaption>
+                    </figure>
+                    
+                </div>
+                <div class="col justify-content-center text-center">
+                    <figure>
+                        <img src="img/qual_results/open_box/1/plans/0.gif" width="100%" style="margin:5px 0px;">  
+                        <img src="img/qual_results/open_box/1/plans/1.gif" width="100%" style="margin:5px 0px;">
+                        <figcaption>New Plans</figcaption>
+                    </figure>
+                </div>  
+                <div class="col justify-content-center text-center">
+                    <figure>
+                        <img src="img/qual_results/open_box/1/best_plan.gif" width="100%" >
+                        <figcaption>Selected Plan</figcaption>
+                    </figure>   
+                </div>
+                <div class="col justify-content-center text-center">
+                    <figure>
+                        <img src="img/qual_results/open_box/1/interaction.gif" width="100%" >
+                        <figcaption>Execution</figcaption>
+                    </figure>
+                </div>
+            </div>
+            <p><br /></p>
+        </div>
+    
+        <div class="section" id="state_embeddding">
+            <h2>Video Generation with State Embedding</h2>
+            <hr>
+            <p>Our system generates videos conditioned on the state embedding derived from past interaction video. We show the generated videos for the same task but with and without conditioning on the state embedding. The state embedding helps the system to generate videos that are more consistent with the underlying system parameters.</p>
+            <p><br /></p>
+            <h4>Task: Push Bar</h4>
+            <div class="row">
+                <div class="col justify-content-center text-center">
+                    <figure>
+                        <img src="img/generation/push_bar/0/interaction.gif" width="45%" >
+                        <figcaption>Conditioned Video</figcaption>
+                    </figure>
+                </div>
+                <div class="col justify-content-center text-center">
+                    <figure style="background-color:rgb(220, 220, 220);">
+                        <div class="row" style="margin:0px 0px 0px 0px">
+                            <div class="col justify-content-center text-center" style="margin:15px 5px;" >
+                                <img src="img/generation/push_bar/uncond/0.gif" width="100%">
+                                <br />
+                                <br />
+                                <img src="img/generation/push_bar/uncond/1.gif" width="100%">
+                            </div>
+                            <div class="col justify-content-center text-center" style="margin:15px 5px;">
+                                <img src="img/generation/push_bar/uncond/2.gif" width="100%">
+                                <br />
+                                <br />
+                                <img src="img/generation/push_bar/uncond/3.gif" width="100%">
+                            </div>
+                        </div>
+                        <figcaption>Plans without State Embedding</figcaption>
+                    </figure>
+                </div>
+                <div class="col justify-content-center text-center">
+                    <figure>
+                        <div class="row" style="margin:0px 0px 0px 0px">
+                            <div class="col justify-content-center text-center" style="margin:15px 5px;">
+                                <img src="img/generation/push_bar/cond/0.gif" width="100%">
+                                <br />
+                                <br />
+                                <img src="img/generation/push_bar/cond/1.gif" width="100%">
+                            </div>
+                            <div class="col justify-content-center text-center" style="margin:15px 5px;">
+                                <img src="img/generation/push_bar/cond/2.gif" width="100%">
+                                <br />
+                                <br />
+                                <img src="img/generation/push_bar/cond/3.gif" width="100%">
+                            </div>
+                        </div>
+                        <figcaption>Plans with State Embedding (Ours)</figcaption>
+                    </figure>
+                </div>
+            </div>  
+            <p><br /></p>
+
+            <h4>Task: Open Box</h4>
+            <div class="row">
+                <div class="col justify-content-center text-center">
+                    <figure>
+                        <img src="img/generation/open_box/0/interaction.gif" width="45%" >
+                        <figcaption>Conditioned Video</figcaption>
+                    </figure>
+                </div>
+                <div class="col justify-content-center text-center">
+                    <figure style="background-color:rgb(220, 220, 220);">
+                        <div class="row" style="margin:0px 0px 0px 0px">
+                            <div class="col justify-content-center text-center" style="margin:15px 5px;" >
+                                <img src="img/generation/open_box/uncond/0.gif" width="100%">
+                                <br />
+                                <br />
+                                <img src="img/generation/open_box/uncond/1.gif" width="100%">
+                            </div>
+                            <div class="col justify-content-center text-center" style="margin:15px 5px;">
+                                <img src="img/generation/open_box/uncond/2.gif" width="100%">
+                                <br />
+                                <br />
+                                <img src="img/generation/open_box/uncond/3.gif" width="100%">
+                            </div>
+                        </div>
+                        <figcaption>Plans without State Embedding</figcaption>
+                    </figure>
+                </div>
+                <div class="col justify-content-center text-center">
+                    <figure>
+                        <div class="row" style="margin:0px 0px 0px 0px">
+                            <div class="col justify-content-center text-center" style="margin:15px 5px;">
+                                <img src="img/generation/open_box/cond/0.gif" width="100%">
+                                <br />
+                                <br />
+                                <img src="img/generation/open_box/cond/1.gif" width="100%">
+                            </div>
+                            <div class="col justify-content-center text-center" style="margin:15px 5px;">
+                                <img src="img/generation/open_box/cond/2.gif" width="100%">
+                                <br />
+                                <br />
+                                <img src="img/generation/open_box/cond/3.gif" width="100%">
+                            </div>
+                        </div>
+                        <figcaption>Plans with State Embedding (Ours)</figcaption>
+                    </figure>
+                </div>
+            </div>  
+            <p><br /></p>
+
+            <h4>Task: Pick Bar</h4>
+            <div class="row">
+                <div class="col justify-content-center text-center">
+                    <figure>
+                        <img src="img/generation/pick_bar/0/interaction.gif" width="45%" >
+                        <figcaption>Conditioned Video</figcaption>
+                    </figure>
+                </div>
+                <div class="col justify-content-center text-center">
+                    <figure style="background-color:rgb(220, 220, 220);">
+                        <div class="row" style="margin:0px 0px 0px 0px">
+                            <div class="col justify-content-center text-center" style="margin:15px 5px;" >
+                                <img src="img/generation/pick_bar/uncond/0.gif" width="100%">
+                                <br />
+                                <br />
+                                <img src="img/generation/pick_bar/uncond/1.gif" width="100%">
+                            </div>
+                            <div class="col justify-content-center text-center" style="margin:15px 5px;">
+                                <img src="img/generation/pick_bar/uncond/2.gif" width="100%">
+                                <br />
+                                <br />
+                                <img src="img/generation/pick_bar/uncond/3.gif" width="100%">
+                            </div>
+                        </div>
+                        <figcaption>Plans without State Embedding</figcaption>
+                    </figure>
+                </div>
+                <div class="col justify-content-center text-center">
+                    <figure>
+                        <div class="row" style="margin:0px 0px 0px 0px">
+                            <div class="col justify-content-center text-center" style="margin:15px 5px;">
+                                <img src="img/generation/pick_bar/cond/0.gif" width="100%">
+                                <br />
+                                <br />
+                                <img src="img/generation/pick_bar/cond/1.gif" width="100%">
+                            </div>
+                            <div class="col justify-content-center text-center" style="margin:15px 5px;">
+                                <img src="img/generation/pick_bar/cond/2.gif" width="100%">
+                                <br />
+                                <br />
+                                <img src="img/generation/pick_bar/cond/3.gif" width="100%">
+                            </div>
+                        </div>
+                        <figcaption>Plans with State Embedding (Ours)</figcaption>
+                    </figure>
+                </div>
+            </div> 
+            <p><br /></p> 
+
+            <h4>Task: Turn Faucet</h4>
+            <div class="row">
+                <div class="col justify-content-center text-center">
+                    <figure>
+                        <img src="img/generation/turn_faucet/0/interaction.gif" width="45%" >
+                        <figcaption>Conditioned Video</figcaption>
+                    </figure>
+                </div>
+                <div class="col justify-content-center text-center">
+                    <figure style="background-color:rgb(220, 220, 220);">
+                        <div class="row" style="margin:0px 0px 0px 0px">
+                            <div class="col justify-content-center text-center" style="margin:15px 5px;" >
+                                <img src="img/generation/turn_faucet/uncond/0.gif" width="100%">
+                                <br />
+                                <br />
+                                <img src="img/generation/turn_faucet/uncond/1.gif" width="100%">
+                            </div>
+                            <div class="col justify-content-center text-center" style="margin:15px 5px;">
+                                <img src="img/generation/turn_faucet/uncond/2.gif" width="100%">
+                                <br />
+                                <br />
+                                <img src="img/generation/turn_faucet/uncond/3.gif" width="100%">
+                            </div>
+                        </div>
+                        <figcaption>Plans without State Embedding</figcaption>
+                    </figure>
+                </div>
+                <div class="col justify-content-center text-center">
+                    <figure>
+                        <div class="row" style="margin:0px 0px 0px 0px">
+                            <div class="col justify-content-center text-center" style="margin:15px 5px;">
+                                <img src="img/generation/turn_faucet/cond/0.gif" width="100%">
+                                <br />
+                                <br />
+                                <img src="img/generation/turn_faucet/cond/1.gif" width="100%">
+                            </div>
+                            <div class="col justify-content-center text-center" style="margin:15px 5px;">
+                                <img src="img/generation/turn_faucet/cond/2.gif" width="100%">
+                                <br />
+                                <br />
+                                <img src="img/generation/turn_faucet/cond/3.gif" width="100%">
+                            </div>
+                        </div>
+                        <figcaption>Plans with State Embedding (Ours)</figcaption>
+                    </figure>
+                </div>
+            </div> 
+            <p><br /></p> 
+
+        </div>
+
+    </div>
+
+    <!-- Javascript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js " integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js " integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI " crossorigin="anonymous "></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</body>
+
+</html>

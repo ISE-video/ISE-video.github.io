@@ -11,8 +11,8 @@
     <!-- Bootstrap core CSS -->
     <!--link href="bootstrap.min.css" rel="stylesheet"-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet " type="text/css " href="slick/slick.css" />
-    <link rel="stylesheet " type="text/css " href="slick/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Custom styles for this template -->
@@ -23,7 +23,7 @@
 <body>
     <div class="jumbotron jumbotron-fluid">
         <div class="container"></div>
-        <h1>Implicit State Estimation<br> via Video Replanning</h1>
+        <h1>Implicit State Estimation via Video Replanning</h1>
         <div class="authors">
             <div>anonymous authors</div>
         </div>
@@ -31,6 +31,49 @@
 
     <div class="btn-container">
         <a href="https://github.com/ISE-video/ise"><span class="button-34"><i class="fa fa-file-code-o"></i> Code</span></a>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <video width="100%" controls playsinline preload="metadata" style="border-radius: 8px;">
+                    <source src="videos/ise_demo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <h2>Robot Execution</h2>
+                <p class="text-center" style="margin-bottom: 18px;">4&times;4 grids of real-world rollouts &mdash; baseline (AVDC) vs. ours (ISE) &mdash; across three tasks.</p>
+                <div class="exec-carousel">
+                    <div class="exec-slide">
+                        <video width="100%" controls playsinline preload="none" poster="videos/poster_slide.jpg" style="border-radius: 8px;">
+                            <source src="videos/slide.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="text-center" style="padding-top: 6px;">Slide Block</div>
+                    </div>
+                    <div class="exec-slide">
+                        <video width="100%" controls playsinline preload="none" poster="videos/poster_pinball.jpg" style="border-radius: 8px;">
+                            <source src="videos/pinball.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="text-center" style="padding-top: 6px;">Pinball</div>
+                    </div>
+                    <div class="exec-slide">
+                        <video width="100%" controls playsinline preload="none" poster="videos/poster_balance.jpg" style="border-radius: 8px;">
+                            <source src="videos/balance.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="text-center" style="padding-top: 6px;">Balance</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="container ">
@@ -455,6 +498,23 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var $carousel = $('.exec-carousel');
+            $carousel.slick({
+                dots: true,
+                arrows: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                adaptiveHeight: true
+            });
+            // pause any playing video when the slide changes
+            $carousel.on('beforeChange', function () {
+                $carousel.find('video').each(function () { this.pause(); });
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -47,36 +47,74 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-10">
-                <h2>Robot Execution</h2>
-                <p class="text-center" style="margin-bottom: 18px;">4&times;4 grids of real-world rollouts &mdash; baseline (AVDC) vs. ours (ISE) &mdash; across three tasks.</p>
+                <h2>Real-World Execution</h2>
+                <hr>
+                <p>We evaluate our method on a physical robot across three real-world tasks &mdash; Slide Block, Pinball, and Balance &mdash; where the underlying system parameters are unknown and must be inferred from interaction. After a single failed attempt, the system updates its state estimate and replans, with no task-specific parameter tuning. The grids below compare one-shot rollouts of the baseline (AVDC) against ours (ISE); success rates over 20 trials per task are summarized in the table that follows. Across the three tasks, this improves one-shot success from 30.0% to 63.8%.</p>
                 <div class="exec-carousel">
                     <div class="exec-slide">
                         <video width="100%" controls playsinline preload="none" poster="videos/poster_slide.jpg" style="border-radius: 8px;">
                             <source src="videos/slide.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-                        <div class="text-center" style="padding-top: 6px;">Slide Block</div>
+                        <div class="text-center" style="padding-top: 6px;">Slide Block &mdash; 20% &rarr; 35%</div>
                     </div>
                     <div class="exec-slide">
                         <video width="100%" controls playsinline preload="none" poster="videos/poster_pinball.jpg" style="border-radius: 8px;">
                             <source src="videos/pinball.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-                        <div class="text-center" style="padding-top: 6px;">Pinball</div>
+                        <div class="text-center" style="padding-top: 6px;">Pinball &mdash; 25% &rarr; 65%</div>
                     </div>
                     <div class="exec-slide">
                         <video width="100%" controls playsinline preload="none" poster="videos/poster_balance.jpg" style="border-radius: 8px;">
                             <source src="videos/balance.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-                        <div class="text-center" style="padding-top: 6px;">Balance</div>
+                        <div class="text-center" style="padding-top: 6px;">Balance &mdash; 35% &rarr; 85%</div>
                     </div>
                 </div>
+
+                <h4 style="margin-top: 32px;">Real-World One-Shot Success</h4>
+                <table class="table table-sm text-center" style="max-width: 480px; margin: 12px auto 0;">
+                    <thead>
+                        <tr>
+                            <th>Task</th>
+                            <th>AVDC (baseline)</th>
+                            <th>Ours (ISE)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Slide Block</td>
+                            <td>20%</td>
+                            <td><b>35%</b></td>
+                        </tr>
+                        <tr>
+                            <td>Pinball</td>
+                            <td>25%</td>
+                            <td><b>65%</b></td>
+                        </tr>
+                        <tr>
+                            <td>Balance</td>
+                            <td>35%</td>
+                            <td><b>85%</b></td>
+                        </tr>
+                        <tr>
+                            <td><b>All</b></td>
+                            <td>30.0%</td>
+                            <td><b>63.8%</b></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
 
     <div class="container ">
+        <div class="cat-divider">
+            <span class="cat-pill">Simulation Benchmarks</span>
+            <div class="cat-sub">Controlled evaluation and analysis across five manipulation tasks.</div>
+        </div>
         <div class="section" id="qual">
             <h2>Qualitative Results</h2>
             <hr> To illustrate how our system adapts to test-time information, we present intermediate outputs of the framework, including the failed plan and interaction, the newly generated plans, the selected plan, and the final execution that improves

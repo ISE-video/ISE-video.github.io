@@ -98,6 +98,29 @@ h5 {
     padding-top: 10px;
 }
 
+/* ---- Category divider (Real vs Simulation) ---- */
+.cat-divider {
+    text-align: center;
+    margin: 96px 0 4px;
+}
+
+.cat-divider .cat-pill {
+    display: inline-block;
+    font-size: 80%;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: #555555;
+    border-radius: 999px;
+    padding: 5px 18px;
+}
+
+.cat-divider .cat-sub {
+    color: #6c757d;
+    font-size: 92%;
+    margin-top: 8px;
+}
+
 .center {
     display: block;
     margin-left: auto;
